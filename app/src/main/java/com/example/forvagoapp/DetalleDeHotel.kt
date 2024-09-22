@@ -1,0 +1,94 @@
+package com.example.forvagoapp
+
+import android.content.Intent
+import android.net.Uri
+import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.VideoView
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import java.io.IOException
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import com.squareup.picasso.Picasso
+
+
+class DetalleDeHotel : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_detalle_de_hotel)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+
+        // Recibir el ID del com.example.forvagoapp.Hotel seleccionado en la pantalla del listado de Hoteles
+        val hotelId = intent.getIntExtra("HOTEL_ID", -1)
+
+        // Leer la lista de hoteles desde el JSON
+        val hoteles = getHotelsFromJson()
+
+        // Buscar el hotel por el ID
+        val hotelSeleccionado = hoteles.find { it.id == hotelId }
+
+        // Asignar datos a la pantalla
+        hotelSeleccionado?.let {
+            // Textos
+            findViewById<TextView>(R.id.dhHotelName).text = it.nombre
+            findViewById<TextView>(R.id.dhHotelDescription).text = it.descripcion
+            findViewById<TextView>(R.id.dhHotelUbicacion).text = it.ubicacion
+            findViewById<TextView>(R.id.dhHotelEstrellas).text = it.estrellas.toString()
+            findViewById<TextView>(R.id.dhHotelContacto).text = it.contacto
+            findViewById<TextView>(R.id.dhHotelTipoAlojamiento).text = it.tipoAlojamiento
+            findViewById<TextView>(R.id.dhHotelServicios).text = it.servicios.toString()
+            findViewById<TextView>(R.id.dhHotelTarifa).text = it.tarifa
+
+            // Imagen
+            val imageViewHotel = findViewById<ImageView>(R.id.dhHotelImage)
+            val hotelImageUrl = it.imagen
+            Picasso.get().load(hotelImageUrl).into(imageViewHotel)
+
+            // Video
+            val videoViewHotel = findViewById<VideoView>(R.id.dhVideoHotel)
+            val hotelVideoURL = it.video
+            videoViewHotel.setVideoURI(hotelVideoURL.toUri())
+            videoViewHotel.start()
+
+            // Asignar pagina web
+            val paginaWebHotel = it.web
+            val abrirPaginaWeb = findViewById<Button>(R.id.dhHotelWebButton)
+
+            abrirPaginaWeb.setOnClickListener {
+                if (paginaWebHotel.isNotEmpty()) {
+                    val intent = Intent(Intent.ACTION_VIEW)
+                    intent.data = Uri.parse(paginaWebHotel)
+                    startActivity(intent)
+                }
+            }
+        }
+
+    }
+
+    // Función para cargar los hoteles desde el archivo JSON
+    private fun getHotelsFromJson(): List<Hotel> {
+        val jsonString: String
+        try {
+            jsonString = assets.open("hoteles.json")
+                .bufferedReader()
+                .use { it.readText() }
+        } catch (ioException: IOException) {
+            ioException.printStackTrace()
+            return emptyList()
+        }
+
+        val listHotelType = object : TypeToken<List<Hotel>>() {}.type
+        return Gson().fromJson(jsonString, listHotelType)
+    }
+}

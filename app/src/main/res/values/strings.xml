@@ -1,3 +1,20 @@
 <resources>
+    <!-- STRINGS GENERALES APP   -->
     <string name="app_name">ForvagoApp</string>
+    <string name="logo_forvago">LogoForvago</string>
+    <!-- FIN STRINGS GENERALES APP   -->
+
+    <!-- STRINGS PANTALLA DETALLE HOTEL  -->
+    <string name="detalle_de_hotel_descripcion">Descripción</string>
+    <string name="detalle_de_hotel_datos_hotel">Datos Hotel</string>
+    <string name="detalle_de_hotel_ubicacion">Ubicación:</string>
+    <string name="detalle_de_hotel_estrellas">Estrellas:</string>
+    <string name="detalle_de_hotel_contacto">Contacto:</string>
+    <string name="detalle_de_hotel_tipoAlojamiento">Tipo alojamiento:</string>
+    <string name="detalle_de_hotel_video_hotel">Video Hotel</string>
+    <string name="detalle_de_hotel_servicios">Servicios</string>
+    <string name="detalle_de_hotel_tarifa">Tarifa</string>
+    <string name="detalle_de_hotel_ver_web">Ver web del Hotel</string>
+    <string name="detalle_de_hotel_volver_listado">Volver al listado</string>
+    <!-- FIN STRINGS PANTALLA DETALLE HOTEL  -->
 </resources>
