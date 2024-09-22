@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         recyclerView = findViewById(R.id.recyclerViewHoteles)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = HotelAdapter(loadHotelsFromAssets())
+        recyclerView.adapter = HotelAdapter(loadHotelsFromAssets(), this)
     }
 
     private fun loadHotelsFromAssets(): List<Hotel> {

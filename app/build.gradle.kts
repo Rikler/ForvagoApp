@@ -36,6 +36,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.core)
     implementation(libs.gson)
     implementation(libs.picasso)
     implementation(libs.androidx.core.ktx)

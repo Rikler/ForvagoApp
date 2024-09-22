@@ -13,7 +13,7 @@
     <string name="detalle_de_hotel_tipoAlojamiento">Tipo alojamiento:</string>
     <string name="detalle_de_hotel_video_hotel">Video Hotel</string>
     <string name="detalle_de_hotel_servicios">Servicios</string>
-    <string name="detalle_de_hotel_tarifa">Tarifa</string>
+    <string name="detalle_de_hotel_tarifa">Tarifa:</string>
     <string name="detalle_de_hotel_ver_web">Ver web del Hotel</string>
     <string name="detalle_de_hotel_volver_listado">Volver al listado</string>
     <!-- FIN STRINGS PANTALLA DETALLE HOTEL  -->

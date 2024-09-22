@@ -3,6 +3,7 @@ package com.example.forvagoapp
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -15,6 +16,10 @@ import androidx.core.view.WindowInsetsCompat
 import java.io.IOException
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerListener
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 import com.squareup.picasso.Picasso
 
 
@@ -47,7 +52,9 @@ class DetalleDeHotel : AppCompatActivity() {
             findViewById<TextView>(R.id.dhHotelEstrellas).text = it.estrellas.toString()
             findViewById<TextView>(R.id.dhHotelContacto).text = it.contacto
             findViewById<TextView>(R.id.dhHotelTipoAlojamiento).text = it.tipoAlojamiento
-            findViewById<TextView>(R.id.dhHotelServicios).text = it.servicios.toString()
+            // Se agrega en un unico string el arreglo de servicios
+            val serviciosText = it.servicios.joinToString(separator = ", ")
+            findViewById<TextView>(R.id.dhHotelServicios).text = serviciosText
             findViewById<TextView>(R.id.dhHotelTarifa).text = it.tarifa
 
             // Imagen
@@ -55,11 +62,24 @@ class DetalleDeHotel : AppCompatActivity() {
             val hotelImageUrl = it.imagen
             Picasso.get().load(hotelImageUrl).into(imageViewHotel)
 
-            // Video
-            val videoViewHotel = findViewById<VideoView>(R.id.dhVideoHotel)
-            val hotelVideoURL = it.video
-            videoViewHotel.setVideoURI(hotelVideoURL.toUri())
-            videoViewHotel.start()
+            // Video - Documentación recomienda usar un Obsevable para configurar las opciones del reproductor
+            val youtubePlayerView = findViewById<com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>(R.id.dhVideoHotel)
+            lifecycle.addObserver(youtubePlayerView)
+            youtubePlayerView.addYouTubePlayerListener(object: YouTubePlayerListener {
+                override fun onReady(youTubePlayer: YouTubePlayer) {
+                    youTubePlayer.cueVideo(it.video, 0F)
+                }
+                override fun onApiChange(youTubePlayer: YouTubePlayer) {}
+                override fun onCurrentSecond(youTubePlayer: YouTubePlayer, second: Float) {}
+                override fun onError(youTubePlayer: YouTubePlayer, error: PlayerConstants.PlayerError) {}
+                override fun onPlaybackQualityChange(youTubePlayer: YouTubePlayer, playbackQuality: PlayerConstants.PlaybackQuality) {}
+                override fun onPlaybackRateChange(youTubePlayer: YouTubePlayer, playbackRate: PlayerConstants.PlaybackRate) {}
+                override fun onStateChange(youTubePlayer: YouTubePlayer, state: PlayerConstants.PlayerState) {}
+                override fun onVideoDuration(youTubePlayer: YouTubePlayer, duration: Float) {}
+                override fun onVideoId(youTubePlayer: YouTubePlayer, videoId: String) {}
+                override fun onVideoLoadedFraction(youTubePlayer: YouTubePlayer, loadedFraction: Float) {}
+            })
+
 
             // Asignar pagina web
             val paginaWebHotel = it.web
@@ -74,6 +94,12 @@ class DetalleDeHotel : AppCompatActivity() {
             }
         }
 
+        // Asignar pagina Listado de Hoteles
+        val abrirListadoHoteles = findViewById<Button>(R.id.dhVolverListado)
+        abrirListadoHoteles.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     // Función para cargar los hoteles desde el archivo JSON
