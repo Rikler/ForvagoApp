@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -11,8 +12,10 @@ import android.widget.VideoView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
+import androidx.core.view.GravityCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import java.io.IOException
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -24,6 +27,8 @@ import com.squareup.picasso.Picasso
 
 
 class DetalleDeHotel : AppCompatActivity() {
+    private lateinit var drawerLayout: DrawerLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -93,6 +98,14 @@ class DetalleDeHotel : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+
+        drawerLayout = findViewById(R.id.drawer_layout)
+
+        findViewById<View>(R.id.menu_button).setOnClickListener {
+            toggleMenu()
+        }
+
+        loadMenuFragment()
     }
 
     // Función para cargar los hoteles desde el archivo JSON
@@ -109,5 +122,20 @@ class DetalleDeHotel : AppCompatActivity() {
 
         val listHotelType = object : TypeToken<List<Hotel>>() {}.type
         return Gson().fromJson(jsonString, listHotelType)
+    }
+
+    fun toggleMenu() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.END)) {
+            drawerLayout.closeDrawer(GravityCompat.END)
+        } else {
+            drawerLayout.openDrawer(GravityCompat.END)
+        }
+    }
+
+    private fun loadMenuFragment() {
+        val menuFragment = Menu()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.menu_container, menuFragment)
+            .commit()
     }
 }
