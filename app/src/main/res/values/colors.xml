@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="urlButton">#0066FF</color>
     <color name="backgroundButton">#D9D9D9</color>
+    <color name="backgroundAccountImage">#EEEEEE</color>
 </resources>

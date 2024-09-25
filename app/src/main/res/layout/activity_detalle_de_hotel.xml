@@ -1,340 +1,366 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/white"
-    android:orientation="vertical"
-    tools:context=".DetalleDeHotel">
-
-
-        <ImageView
-            android:id="@+id/logoForvago"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:contentDescription="@string/logo_forvago"
-            android:src="@drawable/logoforvago"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/dhHotelName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/black"
-            android:text=""
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/logoForvago" />
-
-        <ImageView
-            android:id="@+id/dhHotelImage"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="125dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="16dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dhHotelName" />
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/dhDescriptionText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/black"
-            android:text="@string/detalle_de_hotel_descripcion"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dhHotelImage" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    tools:context=".DetalleDeHotel">
 
-        <TextView
-            android:id="@+id/dhHotelDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="16dp"
-            android:textSize="14sp"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/black"
-            android:text=""
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dhDescriptionText" />
+                        <ImageView
+                            android:id="@+id/menu_button"
+                            android:layout_width="55dp"
+                            android:layout_height="46dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:src="@drawable/ic_menu"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/dhDatosHotelText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/black"
-            android:text="@string/detalle_de_hotel_datos_hotel"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dhHotelDescription" />
+                        <ImageView
+                            android:id="@+id/logoForvago"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:contentDescription="@string/logo_forvago"
+                            android:src="@drawable/logoforvago"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.497"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/dhUbicacionText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/black"
-            android:text="@string/detalle_de_hotel_ubicacion"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dhDatosHotelText" />
+                        <TextView
+                            android:id="@+id/dhHotelName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/black"
+                            android:text=""
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/logoForvago" />
 
-        <TextView
-            android:id="@+id/dhHotelUbicacion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="96dp"
-            android:layout_marginEnd="16dp"
-            android:textSize="14sp"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/black"
-            android:text=""
-            app:layout_constraintLeft_toRightOf="@+id/dhUbicacionText"
-            app:layout_constraintTop_toBottomOf="@+id/dhDatosHotelText"/>
+                        <ImageView
+                            android:id="@+id/dhHotelImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="125dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="16dp"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/dhHotelName" />
 
-        <TextView
-            android:id="@+id/dhEstrellasText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/black"
-            android:text="@string/detalle_de_hotel_estrellas"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dhHotelUbicacion" />
+                        <TextView
+                            android:id="@+id/dhDescriptionText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="20dp"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/black"
+                            android:text="@string/detalle_de_hotel_descripcion"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/dhHotelImage" />
 
-        <TextView
-            android:id="@+id/dhHotelEstrellas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="96dp"
-            android:layout_marginEnd="16dp"
-            android:textSize="14sp"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/black"
-            android:text=""
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dhHotelUbicacion" />
+                        <TextView
+                            android:id="@+id/dhHotelDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="16dp"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/black"
+                            android:text=""
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/dhDescriptionText" />
 
-        <TextView
-            android:id="@+id/dhContactoText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/black"
-            android:text="@string/detalle_de_hotel_contacto"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dhEstrellasText" />
+                        <TextView
+                            android:id="@+id/dhDatosHotelText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/black"
+                            android:text="@string/detalle_de_hotel_datos_hotel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/dhHotelDescription" />
 
-        <TextView
-            android:id="@+id/dhHotelContacto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="96dp"
-            android:layout_marginEnd="16dp"
-            android:textSize="14sp"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/black"
-            android:text=""
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dhEstrellasText" />
+                        <TextView
+                            android:id="@+id/dhUbicacionText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="20dp"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/black"
+                            android:text="@string/detalle_de_hotel_ubicacion"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/dhDatosHotelText" />
 
-        <TextView
-            android:id="@+id/dhTipoAlojamientoText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/black"
-            android:text="@string/detalle_de_hotel_tipoAlojamiento"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dhHotelContacto" />
+                        <TextView
+                            android:id="@+id/dhHotelUbicacion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginStart="96dp"
+                            android:layout_marginEnd="16dp"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/black"
+                            android:text=""
+                            app:layout_constraintLeft_toRightOf="@+id/dhUbicacionText"
+                            app:layout_constraintTop_toBottomOf="@+id/dhDatosHotelText"/>
 
-        <TextView
-            android:id="@+id/dhHotelTipoAlojamiento"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="141dp"
-            android:layout_marginEnd="16dp"
-            android:textSize="14sp"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/black"
-            android:text=""
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dhHotelContacto" />
+                        <TextView
+                            android:id="@+id/dhEstrellasText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="20dp"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/black"
+                            android:text="@string/detalle_de_hotel_estrellas"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/dhHotelUbicacion" />
 
-        <TextView
-            android:id="@+id/dhVideoHotelText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/black"
-            android:text="@string/detalle_de_hotel_video_hotel"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dhHotelTipoAlojamiento" />
+                        <TextView
+                            android:id="@+id/dhHotelEstrellas"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginStart="96dp"
+                            android:layout_marginEnd="16dp"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/black"
+                            android:text=""
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/dhHotelUbicacion" />
 
-<!--        <VideoView-->
-<!--            android:id="@+id/dhVideoHotel"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="125dp"-->
-<!--            android:layout_marginStart="16dp"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:layout_marginEnd="16dp"-->
-<!--            android:scaleType="centerCrop"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/dhVideoHotelText" />-->
+                        <TextView
+                            android:id="@+id/dhContactoText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="20dp"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/black"
+                            android:text="@string/detalle_de_hotel_contacto"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/dhEstrellasText" />
 
-        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-            android:id="@+id/dhVideoHotel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="16dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dhVideoHotelText" />
+                        <TextView
+                            android:id="@+id/dhHotelContacto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginStart="96dp"
+                            android:layout_marginEnd="16dp"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/black"
+                            android:text=""
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/dhEstrellasText" />
 
-        <TextView
-            android:id="@+id/dhServiciosText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/black"
-            android:text="@string/detalle_de_hotel_servicios"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dhVideoHotel" />
+                        <TextView
+                            android:id="@+id/dhTipoAlojamientoText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="20dp"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/black"
+                            android:text="@string/detalle_de_hotel_tipoAlojamiento"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/dhHotelContacto" />
 
-        <TextView
-            android:id="@+id/dhHotelServicios"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="16dp"
-            android:textSize="14sp"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/black"
-            android:text=""
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dhServiciosText" />
+                        <TextView
+                            android:id="@+id/dhHotelTipoAlojamiento"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginStart="141dp"
+                            android:layout_marginEnd="16dp"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/black"
+                            android:text=""
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/dhHotelContacto" />
 
-        <TextView
-            android:id="@+id/dhTarifaText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/black"
-            android:text="@string/detalle_de_hotel_tarifa"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dhHotelServicios" />
+                        <TextView
+                            android:id="@+id/dhVideoHotelText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/black"
+                            android:text="@string/detalle_de_hotel_video_hotel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/dhHotelTipoAlojamiento" />
 
-        <TextView
-            android:id="@+id/dhHotelTarifa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="73dp"
-            android:layout_marginEnd="16dp"
-            android:textSize="14sp"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/black"
-            android:text=""
-            app:layout_constraintLeft_toRightOf="@+id/dhTarifaText"
-            app:layout_constraintTop_toBottomOf="@+id/dhHotelServicios" />
+                        <!--        <VideoView-->
+                        <!--            android:id="@+id/dhVideoHotel"-->
+                        <!--            android:layout_width="match_parent"-->
+                        <!--            android:layout_height="125dp"-->
+                        <!--            android:layout_marginStart="16dp"-->
+                        <!--            android:layout_marginTop="20dp"-->
+                        <!--            android:layout_marginEnd="16dp"-->
+                        <!--            android:scaleType="centerCrop"-->
+                        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+                        <!--            app:layout_constraintStart_toStartOf="parent"-->
+                        <!--            app:layout_constraintTop_toBottomOf="@+id/dhVideoHotelText" />-->
 
-        <Button
-            android:id="@+id/dhHotelWebButton"
-            android:layout_width="wrap_content"
-            android:layout_height="32dp"
-            android:layout_marginTop="20dp"
-            android:width="164dp"
-            android:background="@drawable/button_style"
-            android:fontFamily="sans-serif"
-            android:text="@string/detalle_de_hotel_ver_web"
-            android:textColor="@color/urlButton"
-            android:textSize="11sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dhHotelTarifa" />
+                        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                            android:id="@+id/dhVideoHotel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="16dp"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/dhVideoHotelText" />
 
-        <Button
-            android:id="@+id/dhVolverListado"
-            android:layout_width="wrap_content"
-            android:layout_height="32dp"
-            android:layout_marginTop="20dp"
-            android:width="164dp"
-            android:background="@drawable/button_style"
-            android:fontFamily="sans-serif"
-            android:text="@string/detalle_de_hotel_volver_listado"
-            android:textColor="@color/urlButton"
-            android:textSize="11sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dhHotelWebButton" />
+                        <TextView
+                            android:id="@+id/dhServiciosText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="20dp"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/black"
+                            android:text="@string/detalle_de_hotel_servicios"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/dhVideoHotel" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                        <TextView
+                            android:id="@+id/dhHotelServicios"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="16dp"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/black"
+                            android:text=""
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/dhServiciosText" />
 
-</ScrollView>
+                        <TextView
+                            android:id="@+id/dhTarifaText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="20dp"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/black"
+                            android:text="@string/detalle_de_hotel_tarifa"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/dhHotelServicios" />
+
+                        <TextView
+                            android:id="@+id/dhHotelTarifa"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginStart="73dp"
+                            android:layout_marginEnd="16dp"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/black"
+                            android:text=""
+                            app:layout_constraintLeft_toRightOf="@+id/dhTarifaText"
+                            app:layout_constraintTop_toBottomOf="@+id/dhHotelServicios" />
+
+                        <Button
+                            android:id="@+id/dhHotelWebButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:layout_marginTop="20dp"
+                            android:width="164dp"
+                            android:background="@drawable/button_style"
+                            android:fontFamily="sans-serif"
+                            android:text="@string/detalle_de_hotel_ver_web"
+                            android:textColor="@color/urlButton"
+                            android:textSize="11sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/dhHotelTarifa" />
+
+                        <Button
+                            android:id="@+id/dhVolverListado"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:layout_marginTop="20dp"
+                            android:width="164dp"
+                            android:background="@drawable/button_style"
+                            android:fontFamily="sans-serif"
+                            android:text="@string/detalle_de_hotel_volver_listado"
+                            android:textColor="@color/urlButton"
+                            android:textSize="11sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/dhHotelWebButton" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <FrameLayout
+            android:id="@+id/menu_container"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="@android:color/transparent" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

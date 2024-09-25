@@ -1,171 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".ProfileActivity">
+    android:background="@android:color/white">
 
-    <!-- Logo FORVAGO -->
-    <ImageView
-        android:id="@+id/ivLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo_forvago"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:context=".ProfileActivity">
 
-    <!-- Icono de Menú -->
-    <ImageView
-        android:id="@+id/ivMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_menu"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"/>
+        <!-- Logo FORVAGO -->
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo_forvago"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp"/>
 
-    <!-- Nombre del Usuario -->
-    <TextView
-        android:id="@+id/tvNombreUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="NOMBRE DE USUARIO"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:textColor="@android:color/black"
-        app:layout_constraintTop_toBottomOf="@id/ivLogo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
+        <!-- Icono de Menú -->
 
-    <!-- Imagen de Perfil -->
-    <ImageView
-        android:id="@+id/ivImagenPerfil"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/ic_perfil_placeholder"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/tvNombreUsuario"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        <!-- Nombre del Usuario -->
 
-    <!-- Información del Usuario -->
-    <TextView
-        android:id="@+id/tvInformacionUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Información de Usuario"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/ivImagenPerfil"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"/>
+        <ImageView
+            android:id="@+id/menu_button"
+            android:layout_width="55dp"
+            android:layout_height="46dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/ic_menu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Detalle Nombre -->
-    <TextView
-        android:id="@+id/tvNombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nombre: Lorem ipsum dolor sit amet."
-        app:layout_constraintTop_toBottomOf="@id/tvInformacionUsuario"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"/>
+        <TextView
+            android:id="@+id/tvNombreUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NOMBRE DE USUARIO"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            app:layout_constraintTop_toBottomOf="@id/ivLogo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"/>
 
-    <!-- Detalle Correo -->
-    <TextView
-        android:id="@+id/tvCorreo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Correo: Lorem ipsum dolor sit amet."
-        app:layout_constraintTop_toBottomOf="@id/tvNombre"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"/>
+        <!-- Imagen de Perfil -->
+        <ImageView
+            android:id="@+id/ivImagenPerfil"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_perfil_placeholder"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tvNombreUsuario"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Detalle Teléfono -->
-    <TextView
-        android:id="@+id/tvTelefono"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Teléfono: Lorem ipsum dolor sit amet."
-        app:layout_constraintTop_toBottomOf="@id/tvCorreo"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"/>
+        <!-- Información del Usuario -->
+        <TextView
+            android:id="@+id/tvInformacionUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Información de Usuario"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/ivImagenPerfil"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp"/>
 
-    <!-- Detalle Fecha de Nacimiento -->
-    <TextView
-        android:id="@+id/tvFechaNacimiento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fecha de nacimiento: Lorem ipsum dolor sit amet."
-        app:layout_constraintTop_toBottomOf="@id/tvTelefono"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"/>
+        <!-- Detalle Nombre -->
+        <TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre: Lorem ipsum dolor sit amet."
+            app:layout_constraintTop_toBottomOf="@id/tvInformacionUsuario"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"/>
 
-    <!-- Preferencias de Viaje -->
-    <TextView
-        android:id="@+id/tvPreferenciasViaje"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Preferencias de Viaje"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/tvFechaNacimiento"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"/>
+        <!-- Detalle Correo -->
+        <TextView
+            android:id="@+id/tvCorreo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Correo: Lorem ipsum dolor sit amet."
+            app:layout_constraintTop_toBottomOf="@id/tvNombre"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"/>
 
-    <!-- Destinos Favoritos -->
-    <TextView
-        android:id="@+id/tvDestinosFavoritos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Destinos favoritos: Lorem ipsum dolor sit amet."
-        app:layout_constraintTop_toBottomOf="@id/tvPreferenciasViaje"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"/>
+        <!-- Detalle Teléfono -->
+        <TextView
+            android:id="@+id/tvTelefono"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Teléfono: Lorem ipsum dolor sit amet."
+            app:layout_constraintTop_toBottomOf="@id/tvCorreo"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"/>
 
-    <!-- Idiomas -->
-    <TextView
-        android:id="@+id/tvIdiomas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Idiomas: Lorem ipsum dolor sit amet."
-        app:layout_constraintTop_toBottomOf="@id/tvDestinosFavoritos"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"/>
+        <!-- Detalle Fecha de Nacimiento -->
+        <TextView
+            android:id="@+id/tvFechaNacimiento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha de nacimiento: Lorem ipsum dolor sit amet."
+            app:layout_constraintTop_toBottomOf="@id/tvTelefono"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"/>
 
-    <!-- Intereses Especiales -->
-    <TextView
-        android:id="@+id/tvInteresesEspeciales"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Intereses especiales: Lorem ipsum dolor sit amet."
-        app:layout_constraintTop_toBottomOf="@id/tvIdiomas"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"/>
+        <!-- Preferencias de Viaje -->
+        <TextView
+            android:id="@+id/tvPreferenciasViaje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preferencias de Viaje"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/tvFechaNacimiento"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"/>
 
-    <!-- Botón Volver al Inicio -->
-    <Button
-        android:id="@+id/btnVolverInicio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Volver al inicio"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvInteresesEspeciales" />
+        <!-- Destinos Favoritos -->
+        <TextView
+            android:id="@+id/tvDestinosFavoritos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Destinos favoritos: Lorem ipsum dolor sit amet."
+            app:layout_constraintTop_toBottomOf="@id/tvPreferenciasViaje"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Idiomas -->
+        <TextView
+            android:id="@+id/tvIdiomas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Idiomas: Lorem ipsum dolor sit amet."
+            app:layout_constraintTop_toBottomOf="@id/tvDestinosFavoritos"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Intereses Especiales -->
+        <TextView
+            android:id="@+id/tvInteresesEspeciales"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Intereses especiales: Lorem ipsum dolor sit amet."
+            app:layout_constraintTop_toBottomOf="@id/tvIdiomas"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Botón Volver al Inicio -->
+        <Button
+            android:id="@+id/btnVolverInicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Volver al inicio"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvInteresesEspeciales" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/menu_container"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@android:color/transparent" />
+</androidx.drawerlayout.widget.DrawerLayout>

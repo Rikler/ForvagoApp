@@ -14,9 +14,11 @@ constraintlayout = "2.1.4"
 picasso = "2.8"
 firebaseCrashlyticsBuildtools = "3.0.2"
 youtubeAndroidPlayerApi = "1.2.2"
+drawerlayout = "1.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-material3 = { module = "androidx.compose.material3:material3" }
 core = { module = "com.pierfrancescosoffritti.androidyoutubeplayer:core", version.ref = "core" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -29,6 +31,7 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 picasso = { module = "com.squareup.picasso:picasso", version.ref = "picasso" }
 firebase-crashlytics-buildtools = { group = "com.google.firebase", name = "firebase-crashlytics-buildtools", version.ref = "firebaseCrashlyticsBuildtools" }
 youtube-android-player-api = { module = "com.google.android.youtube:youtube-android-player-api", version.ref = "youtubeAndroidPlayerApi" }
+androidx-drawerlayout = { group = "androidx.drawerlayout", name = "drawerlayout", version.ref = "drawerlayout" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

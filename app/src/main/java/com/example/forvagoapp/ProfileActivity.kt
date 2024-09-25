@@ -2,12 +2,16 @@ package com.example.forvagoapp
 
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.TextView
 import android.widget.ImageView
 import android.widget.Button
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 
 class ProfileActivity : AppCompatActivity() {
+    private lateinit var drawerLayout: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,7 +19,6 @@ class ProfileActivity : AppCompatActivity() {
 
         // obtain data at XML
         val ivLogo = findViewById<ImageView>(R.id.ivLogo)
-        val ivMenu = findViewById<ImageView>(R.id.ivMenu)
         val tvNombreUsuario = findViewById<TextView>(R.id.tvNombreUsuario)
         val ivImagenPerfil = findViewById<ImageView>(R.id.ivImagenPerfil)
         val tvInformacionUsuario = findViewById<TextView>(R.id.tvInformacionUsuario)
@@ -53,5 +56,28 @@ class ProfileActivity : AppCompatActivity() {
 
             finish() // Esto cierra la actividad actual y vuelve a la anterior
         }
+
+        drawerLayout = findViewById(R.id.drawer_layout)
+
+        findViewById<View>(R.id.menu_button).setOnClickListener {
+            toggleMenu()
+        }
+
+        loadMenuFragment()
+    }
+
+    fun toggleMenu() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.END)) {
+            drawerLayout.closeDrawer(GravityCompat.END)
+        } else {
+            drawerLayout.openDrawer(GravityCompat.END)
+        }
+    }
+
+    private fun loadMenuFragment() {
+        val menuFragment = Menu()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.menu_container, menuFragment)
+            .commit()
     }
 }
