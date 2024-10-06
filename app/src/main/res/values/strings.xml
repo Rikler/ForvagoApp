@@ -16,7 +16,21 @@
     <string name="detalle_de_hotel_tarifa">Tarifa:</string>
     <string name="detalle_de_hotel_ver_web">Ver web del Hotel</string>
     <string name="detalle_de_hotel_volver_listado">Volver al listado</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <!-- FIN STRINGS PANTALLA DETALLE HOTEL  -->
+
+    <!-- STRINGS MAIN PAGE -->
+    <string name="main_page_descripcion">DESCRIPCIÓN</string>
+    <string name="main_page_descripcion_forvago">Forvago es una app diseñada para viajeros que buscan experiencias personalizadas. Ofrece guías actualizadas sobre destinos, alojamientos y actividades, permitiendo explorar recomendaciones locales, reseñas de usuarios y sugerencias basadas en los intereses del viajero.</string>
+    <string name="main_page_recomendaciones">RECOMENDACIONES DE VIAJE</string>
+    <string name="main_page_recomendacion_1_title">Investiga a fondo el destino</string>
+    <string name="main_page_recomendacion_1">Antes de emprender cualquier viaje, es crucial conocer las costumbres, clima y eventos locales. Esto no solo te permite disfrutar mejor de la experiencia, sino también evitar malentendidos culturales y problemas logísticos.</string>
+    <string name="main_page_recomendacion_2_title">Viaja ligero pero bien preparado</string>
+    <string name="main_page_recomendacion_2">Llevar lo esencial te ahorra tiempo y estrés, especialmente si usas transporte público o te mueves entre varios destinos. Un buen botiquín, dispositivos electrónicos cargados y adaptadores de corriente son indispensables.</string>
+    <string name="main_page_recomendacion_3_title">Sé flexible y abierto a cambios</string>
+    <string name="main_page_recomendacion_3">Los mejores momentos de los viajes suelen ocurrir cuando te sales del itinerario planificado. Mantente abierto a recomendaciones locales o cambios inesperados en tus planes, que podrían llevarte a descubrir algo que no esperabas.</string>
+    <string name="main_page_lista_de_hoteles">LISTA DE HOTELES</string>
+    <string name="main_page_descripcion_hoteles">Descripción</string>
+    <string name="main_page_ver_hotel">Ver hotel...</string>
+    <string name="main_page_ver_listado_completo">Ver listado completo</string>
+    <!-- FIN STRINGS MAIN PAGE -->
 </resources>

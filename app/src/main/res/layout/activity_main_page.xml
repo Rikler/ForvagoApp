@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+tools:context=".MainPage"
+android:id="@+id/drawer_layout"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@android:color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            tools:context=".DetalleDeHotel">
+
+            <ImageView
+                android:id="@+id/menu_button"
+                android:layout_width="55dp"
+                android:layout_height="46dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/ic_menu"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/logoForvago"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:contentDescription="@string/logo_forvago"
+                android:src="@drawable/logoforvago"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/mpDescriptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/black"
+                android:text="@string/main_page_descripcion"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logoForvago" />
+
+            <TextView
+                android:id="@+id/mpDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/black"
+                android:text="@string/main_page_descripcion_forvago"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mpDescriptionText" />
+
+            <TextView
+                android:id="@+id/mpRecomendacionesText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/black"
+                android:text="@string/main_page_recomendaciones"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mpDescription" />
+
+            <ImageView
+                android:id="@+id/mpRecomendacion1Img"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_recomendacion1"
+                android:background="@drawable/account_circle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mpRecomendacionesText" />
+
+            <TextView
+                android:id="@+id/mpRecomendacion1Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="76dp"
+                android:layout_marginEnd="16dp"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/black"
+                android:text="@string/main_page_recomendacion_1_title"
+                app:layout_constraintLeft_toRightOf="@+id/mpRecomendacion1Img"
+                app:layout_constraintTop_toBottomOf="@+id/mpRecomendacionesText"/>
+
+            <TextView
+                android:id="@+id/mpRecomendacion1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="76dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/black"
+                android:text="@string/main_page_recomendacion_1"
+                app:layout_constraintLeft_toRightOf="@+id/mpRecomendacion1Img"
+                app:layout_constraintTop_toBottomOf="@+id/mpRecomendacion1Title"/>
+
+            <ImageView
+                android:id="@+id/mpRecomendacion2Img"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_recomendacion2"
+                android:background="@drawable/account_circle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mpRecomendacion1" />
+
+            <TextView
+                android:id="@+id/mpRecomendacion2Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="76dp"
+                android:layout_marginEnd="16dp"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/black"
+                android:text="@string/main_page_recomendacion_2_title"
+                app:layout_constraintLeft_toRightOf="@+id/mpRecomendacion2Img"
+                app:layout_constraintTop_toBottomOf="@+id/mpRecomendacion1"/>
+
+            <TextView
+                android:id="@+id/mpRecomendacion2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="76dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/black"
+                android:text="@string/main_page_recomendacion_2"
+                app:layout_constraintLeft_toRightOf="@+id/mpRecomendacion2Img"
+                app:layout_constraintTop_toBottomOf="@+id/mpRecomendacion2Title"/>
+
+            <ImageView
+                android:id="@+id/mpRecomendacion3Img"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_recomendacion3"
+                android:background="@drawable/account_circle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mpRecomendacion2" />
+
+            <TextView
+                android:id="@+id/mpRecomendacion3Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="76dp"
+                android:layout_marginEnd="16dp"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/black"
+                android:text="@string/main_page_recomendacion_3_title"
+                app:layout_constraintLeft_toRightOf="@+id/mpRecomendacion3Img"
+                app:layout_constraintTop_toBottomOf="@+id/mpRecomendacion2"/>
+
+            <TextView
+                android:id="@+id/mpRecomendacion3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="76dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/black"
+                android:text="@string/main_page_recomendacion_3"
+                app:layout_constraintLeft_toRightOf="@+id/mpRecomendacion3Img"
+                app:layout_constraintTop_toBottomOf="@+id/mpRecomendacion3Title"/>
+
+            <TextView
+                android:id="@+id/mpListaHoteles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/black"
+                android:text="@string/main_page_lista_de_hoteles"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mpRecomendacion3" />
+
+            <ImageView
+                android:id="@+id/mpHotelImg1"
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mpListaHoteles" />
+
+            <TextView
+                android:id="@+id/mpDescriptionHotelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/black"
+                android:text="@string/main_page_descripcion_hoteles"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mpHotelImg1" />
+
+            <TextView
+                android:id="@+id/mpHotelDescription1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/black"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mpDescriptionHotelText" />
+
+            <TextView
+                android:id="@+id/mpVerHotel1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/urlButton"
+                android:text="@string/main_page_ver_hotel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mpHotelDescription1" />
+
+            <ImageView
+                android:id="@+id/mpHotelImg2"
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mpVerHotel1" />
+
+            <TextView
+                android:id="@+id/mpDescriptionHotelText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/black"
+                android:text="@string/main_page_descripcion_hoteles"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mpHotelImg2" />
+
+            <TextView
+                android:id="@+id/mpHotelDescription2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/black"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mpDescriptionHotelText2" />
+
+            <TextView
+                android:id="@+id/mpVerHotel2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/urlButton"
+                android:text="@string/main_page_ver_hotel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mpHotelDescription2" />
+
+            <Button
+                android:id="@+id/mpListadoHotelButton"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginTop="20dp"
+                android:width="164dp"
+                android:background="@drawable/button_style"
+                android:fontFamily="sans-serif"
+                android:text="@string/main_page_ver_listado_completo"
+                android:textColor="@color/urlButton"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mpVerHotel2" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <FrameLayout
+    android:id="@+id/menu_container"
+    android:layout_width="250dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="end"
+    android:background="@android:color/transparent" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

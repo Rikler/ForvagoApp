@@ -1,5 +1,7 @@
 package com.example.forvagoapp
 
+import java.io.Serializable
+
 data class Hotel(
     val id: Int,
     val nombre: String,
@@ -13,4 +15,4 @@ data class Hotel(
     val servicios: List<String>,
     val tarifa: String,
     val web: String
-)
+): Serializable

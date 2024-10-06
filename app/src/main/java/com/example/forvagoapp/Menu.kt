@@ -6,11 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
-import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
 
 class Menu : Fragment() {
 
@@ -29,12 +26,14 @@ class Menu : Fragment() {
                 activity.toggleMenu()
             } else if (activity is ProfileActivity) {
                 activity.toggleMenu()
+            } else if (activity is MainPage) {
+                activity.toggleMenu()
             }
         }
 
         val btnOption1 = view.findViewById<LinearLayout>(R.id.btn_option_1)
         btnOption1.setOnClickListener {
-            val intent = Intent(activity, MainActivity::class.java)
+            val intent = Intent(activity, MainPage::class.java)
             startActivity(intent)
         }
 
