@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".MainPage"
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                tools:context=".DetalleDeHotel">
+
+                <ImageView
+                    android:id="@+id/menu_button"
+                    android:layout_width="55dp"
+                    android:layout_height="46dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/ic_menu"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/logoForvago"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:contentDescription="@string/logo_forvago"
+                    android:src="@drawable/logoforvago"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/registerNoPhoto"
+                    android:layout_width="123dp"
+                    android:layout_height="123dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/ic_account"
+                    android:background="@drawable/account_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/logoForvago" />
+
+                <TextView
+                    android:id="@+id/registerTitleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="@string/register_add_user"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerNoPhoto" />
+
+                <TextView
+                    android:id="@+id/registerTextName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:textSize="13sp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/black"
+                    android:text="@string/register_input_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerTitleText" />
+
+                <EditText
+                    android:id="@+id/registerInputName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/register_placeholder_name"
+                    android:autofillHints=""
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="16dp"
+                    android:inputType="textPersonName"
+                    android:background="@drawable/input_style"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerTextName"/>
+
+                <TextView
+                    android:id="@+id/registerTextLastname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:textSize="13sp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/black"
+                    android:text="@string/register_input_lastname"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerInputName" />
+
+                <EditText
+                    android:id="@+id/registerInputLastname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:hint="@string/register_placeholder_lastname"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="16dp"
+                    android:inputType="textPersonName"
+                    android:background="@drawable/input_style"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerTextLastname"/>
+
+                <TextView
+                    android:id="@+id/registerTextAge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:textSize="13sp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/black"
+                    android:text="@string/register_input_age"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerInputLastname" />
+
+                <EditText
+                    android:id="@+id/registerInputAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:hint="@string/register_placeholder_age"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="16dp"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/input_style"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerTextAge"/>
+
+                <TextView
+                    android:id="@+id/registerTextEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:textSize="13sp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/black"
+                    android:text="@string/register_input_email"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerInputAge" />
+
+                <EditText
+                    android:id="@+id/registerInputEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:hint="@string/register_placeholder_email"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="16dp"
+                    android:inputType="textEmailAddress"
+                    android:background="@drawable/input_style"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerTextEmail"/>
+
+                <TextView
+                    android:id="@+id/registerTextFavorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:textSize="13sp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/black"
+                    android:text="@string/register_input_favorite"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerInputEmail" />
+
+                <EditText
+                    android:id="@+id/registerInputFavorite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="16dp"
+                    android:autofillHints=""
+                    android:background="@drawable/input_style"
+                    android:hint="@string/register_placeholder_favorite"
+                    android:inputType="textMultiLine"
+                    android:textSize="14sp"
+                    android:minHeight="70dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerTextFavorite"  />
+
+                <TextView
+                    android:id="@+id/registerTextImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:textSize="13sp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/black"
+                    android:text="@string/register_input_image"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerInputFavorite" />
+
+                <EditText
+                    android:id="@+id/registerInputImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:hint="@string/register_placeholder_image"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="16dp"
+                    android:inputType="text"
+                    android:background="@drawable/input_style"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerTextImage"/>
+
+                <TextView
+                    android:id="@+id/registerTextLanguages"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:textSize="13sp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/black"
+                    android:text="@string/register_input_languages"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerInputImage" />
+
+                <EditText
+                    android:id="@+id/registerInputLanguages"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:hint="@string/register_placeholder_languages"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="16dp"
+                    android:inputType="text"
+                    android:background="@drawable/input_style"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerTextLanguages"/>
+
+                <TextView
+                    android:id="@+id/registerTextSpecial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:textSize="13sp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/black"
+                    android:text="@string/register_input_special"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerInputLanguages" />
+
+                <EditText
+                    android:id="@+id/registerInputSpecial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="16dp"
+                    android:autofillHints=""
+                    android:background="@drawable/input_style"
+                    android:hint="@string/register_placeholder_special"
+                    android:inputType="textMultiLine"
+                    android:textSize="14sp"
+                    android:minHeight="70dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerTextSpecial"  />
+
+                <Button
+                    android:id="@+id/registerButtonSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:width="164dp"
+                    android:background="@drawable/button_style"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/register_button_save"
+                    android:textColor="@color/urlButton"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerInputSpecial" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/menu_container"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@android:color/transparent" />
+
+</androidx.drawerlayout.widget.DrawerLayout>
