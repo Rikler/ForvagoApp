@@ -1,7 +1,9 @@
 package com.example.forvagoapp
 
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.TextView
@@ -9,6 +11,9 @@ import android.widget.ImageView
 import android.widget.Button
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.squareup.picasso.Picasso
 
 class ProfileActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
@@ -17,44 +22,11 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        // obtain data at XML
-        val ivLogo = findViewById<ImageView>(R.id.ivLogo)
-        val tvNombreUsuario = findViewById<TextView>(R.id.tvNombreUsuario)
-        val ivImagenPerfil = findViewById<ImageView>(R.id.ivImagenPerfil)
-        val tvInformacionUsuario = findViewById<TextView>(R.id.tvInformacionUsuario)
-        val tvNombre = findViewById<TextView>(R.id.tvNombre)
-        val tvCorreo = findViewById<TextView>(R.id.tvCorreo)
-        val tvTelefono = findViewById<TextView>(R.id.tvTelefono)
-        val tvFechaNacimiento = findViewById<TextView>(R.id.tvFechaNacimiento)
-        val tvPreferenciasViaje = findViewById<TextView>(R.id.tvPreferenciasViaje)
-        val tvDestinosFavoritos = findViewById<TextView>(R.id.tvDestinosFavoritos)
-        val tvIdiomas = findViewById<TextView>(R.id.tvIdiomas)
-        val tvInteresesEspeciales = findViewById<TextView>(R.id.tvInteresesEspeciales)
-        val btnVolverInicio = findViewById<Button>(R.id.btnVolverInicio)
+        loadProfileData()
 
-        // Simulación de datos del usuario (estos serían obtenidos de una base de datos o API)
-        val nombreUsuario = "Juan Pablo Gutiérrez"
-        val correoUsuario = "juanpablo@example.com"
-        val telefonoUsuario = "+57 123 456 7890"
-        val fechaNacimientoUsuario = "15 de enero de 1990"
-        val destinosFavoritosUsuario = "París, Londres, Nueva York"
-        val idiomasUsuario = "Español, Inglés, Francés"
-        val interesesEspecialesUsuario = "Fotografía, Comida Gourmet, Trekking"
-
-        // Asignar los valores a las vistas
-        tvNombreUsuario.text = nombreUsuario
-        tvNombre.text = "Nombre: $nombreUsuario"
-        tvCorreo.text = "Correo: $correoUsuario"
-        tvTelefono.text = "Teléfono: $telefonoUsuario"
-        tvFechaNacimiento.text = "Fecha de nacimiento: $fechaNacimientoUsuario"
-        tvDestinosFavoritos.text = "Destinos favoritos: $destinosFavoritosUsuario"
-        tvIdiomas.text = "Idiomas: $idiomasUsuario"
-        tvInteresesEspeciales.text = "Intereses especiales: $interesesEspecialesUsuario"
-
-        //  botón Volver al Inicio
-        btnVolverInicio.setOnClickListener {
-
-            finish() // Esto cierra la actividad actual y vuelve a la anterior
+        val registerButton = findViewById<Button>(R.id.btnRegister)
+        registerButton.setOnClickListener {
+            goToRegisterActivity()
         }
 
         drawerLayout = findViewById(R.id.drawer_layout)
@@ -64,6 +36,100 @@ class ProfileActivity : AppCompatActivity() {
         }
 
         loadMenuFragment()
+    }
+
+    private fun loadProfileData() {
+        val sharedPreferences = getSharedPreferences("profileData", MODE_PRIVATE)
+
+        val name = sharedPreferences.getString("name", null)
+        Log.d("Nommbre guardado: ", name.toString())
+        val lastName = sharedPreferences.getString("lastName", null)
+        val age = sharedPreferences.getString("age", null)
+        val email = sharedPreferences.getString("email", null)
+        val favorites = sharedPreferences.getString("favorites", null)
+        val image = sharedPreferences.getString("image", null)
+        val languages = sharedPreferences.getString("languages", null)
+        val special = sharedPreferences.getString("special", null)
+
+        if (name != null && lastName != null && age != null && email != null && favorites != null && image != null && languages != null && special != null) {
+            findViewById<TextView>(R.id.tvNoInfo).visibility = View.GONE
+            findViewById<TextView>(R.id.btnRegister).visibility = View.GONE
+
+            findViewById<TextView>(R.id.tvNombreUsuario).apply {
+                text = "$name $lastName"
+                visibility = View.VISIBLE
+            }
+            findViewById<TextView>(R.id.tvInformacionUsuario).apply {
+                visibility = View.VISIBLE
+            }
+            findViewById<TextView>(R.id.tvNombre).apply {
+                visibility = View.VISIBLE
+            }
+            findViewById<TextView>(R.id.tvProfileName).apply {
+                text = "$name"
+                visibility = View.VISIBLE
+            }
+            findViewById<TextView>(R.id.tvApellido).apply {
+                visibility = View.VISIBLE
+            }
+            findViewById<TextView>(R.id.tvProfileLastname).apply {
+                text = "$lastName"
+                visibility = View.VISIBLE
+            }
+            findViewById<TextView>(R.id.tvCorreo).apply {
+                visibility = View.VISIBLE
+            }
+            findViewById<TextView>(R.id.tvProfileEmail).apply {
+                text = "$email"
+                visibility = View.VISIBLE
+            }
+            findViewById<TextView>(R.id.tvEdad).apply {
+                visibility = View.VISIBLE
+            }
+            findViewById<TextView>(R.id.tvProfileAge).apply {
+                text = "$age"
+                visibility = View.VISIBLE
+            }
+            findViewById<TextView>(R.id.tvFavorites).apply {
+                visibility = View.VISIBLE
+            }
+            findViewById<TextView>(R.id.tvProfileFavorites).apply {
+                text = "$favorites"
+                visibility = View.VISIBLE
+            }
+            findViewById<TextView>(R.id.tvLanguages).apply {
+                visibility = View.VISIBLE
+            }
+            findViewById<TextView>(R.id.tvProfileLanguages).apply {
+                text = "$languages"
+                visibility = View.VISIBLE
+            }
+            findViewById<TextView>(R.id.tvSpecial).apply {
+                visibility = View.VISIBLE
+            }
+            findViewById<TextView>(R.id.tvProfileSpecial).apply {
+                text = "$special"
+                visibility = View.VISIBLE
+            }
+            findViewById<Button>(R.id.btnVolverInicio).apply {
+                visibility = View.VISIBLE
+            }
+
+            val imageProfile = findViewById<ImageView>(R.id.ivImagenPerfil)
+            //Picasso.get().load(image).into(imageProfile)
+            Glide.with(this).load(image).apply(RequestOptions.circleCropTransform()).into(imageProfile)
+
+            val homeButton = findViewById<Button>(R.id.btnVolverInicio)
+            homeButton.setOnClickListener {
+                val intent = Intent(this, MainPage::class.java)
+                startActivity(intent)
+            }
+        }
+    }
+
+    private fun goToRegisterActivity() {
+        val intent = Intent(this, RegisterActivity::class.java)
+        startActivity(intent)
     }
 
     fun toggleMenu() {

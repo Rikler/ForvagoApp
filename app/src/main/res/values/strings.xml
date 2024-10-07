@@ -1,6 +1,6 @@
 <resources>
     <!-- STRINGS GENERALES APP   -->
-    <string name="app_name">ForvagoApp</string>
+    <string name="app_name">Forvago: Guía de Viajes</string>
     <string name="logo_forvago">LogoForvago</string>
     <!-- FIN STRINGS GENERALES APP   -->
 
@@ -33,4 +33,40 @@
     <string name="main_page_ver_hotel">Ver hotel...</string>
     <string name="main_page_ver_listado_completo">Ver listado completo</string>
     <!-- FIN STRINGS MAIN PAGE -->
+
+    <!-- STRINGS REGISTER PAGE -->
+    <string name="register_add_user">Agregar Usuario</string>
+    <string name="register_input_name">Nombre</string>
+    <string name="register_placeholder_name">Ingresa tu nombre</string>
+    <string name="register_input_lastname">Apellido</string>
+    <string name="register_placeholder_lastname">Ingresa tu apellido</string>
+    <string name="register_input_age">Edad</string>
+    <string name="register_placeholder_age">Ingresa tu edad</string>
+    <string name="register_input_email">Correo electrónico</string>
+    <string name="register_placeholder_email">Ingresa tu correo</string>
+    <string name="register_input_favorite">Destinos favoritos</string>
+    <string name="register_placeholder_favorite">Escribe los destinos favoritos que has visitado o deseas visitar</string>
+    <string name="register_input_image">URL de imagen de perfil</string>
+    <string name="register_placeholder_image">Ingresa la URL de tu imagen de perfil</string>
+    <string name="register_input_languages">Idiomas</string>
+    <string name="register_placeholder_languages">Ingresa los idiomas que hablas</string>
+    <string name="register_input_special">Intereses Especiales</string>
+    <string name="register_placeholder_special">Escribe tus intereses especiales</string>
+    <string name="register_button_save">Guardar</string>
+    <!-- FIN STRINGS REGISTER PAGE -->
+
+    <!-- STRINGS PROFILE PAGE   -->
+    <string name="profile_no_info_text">NO HAY INFORMACIÓN DEL PERFIL</string>
+    <string name="profile_button_no_info_text">Agregar información</string>
+    <string name="profile_informacion_usuario_text">Información de Usuario</string>
+    <string name="profile_name_text">Nombre:</string>
+    <string name="profile_lastname_text">Apellido:</string>
+    <string name="profile_email_text">Correo:</string>
+    <string name="profile_age_text">Edad:</string>
+    <string name="profile_preferences_text">Preferencias de Viaje</string>
+    <string name="profile_favorites_text">Destinos favoritos:</string>
+    <string name="profile_languages_text">Idiomas:</string>
+    <string name="profile_special_text">Intereses especiales:</string>
+    <string name="profile_button_home_text">Volver al Inicio</string>
+    <!-- END STRINGS PROFILE PAGE   -->
 </resources>
